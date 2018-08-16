@@ -73,6 +73,14 @@ class ViewController: UIViewController, ARSCNViewDelegate {
         }
     }
     
+    @IBAction func removeAllDice(_ sender: UIBarButtonItem) {
+        if !diceArray.isEmpty {
+            for dice in diceArray {
+                dice.removeFromParentNode()
+            }
+        }
+    }
+    
     func roll(dice : SCNNode) {
         let randomX = Float(arc4random_uniform(4) + 1) * Float.pi / 2
         let randomZ = Float(arc4random_uniform(4) + 1) * Float.pi / 2
